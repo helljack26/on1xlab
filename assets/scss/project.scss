@@ -1,0 +1,666 @@
+@import './main';
+@import './animation';
+
+body {
+    @include customScrollBar;
+}
+
+// Main container
+main {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 130px;
+
+    @media screen and (max-width: 1400px) {
+        padding-top: 100px;
+    }
+
+    // Bg
+    &::before {
+        content: "";
+        background-color: #dde8ed;
+        filter: blur(80px);
+        background-size: 400% 400%;
+        background-position: center;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        height: inherit;
+        transform: scale(1.1);
+        z-index: -1;
+
+        @media screen and (max-width: 1200px) {
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+            transform: none;
+        }
+    }
+
+    .container_header {
+        width: 100%;
+        max-width: 1240px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        z-index: 2;
+        margin-bottom: 70px;
+
+        @media screen and (max-width: 1400px) {
+            max-width: 100%;
+            padding: 0 8vw;
+            margin-bottom: 60px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 1150px) {
+            padding: 0 5vw;
+        }
+
+        @media screen and (max-width: 576px) {
+            padding: 0 4vw;
+            row-gap: 15px;
+        }
+
+        // Main title
+        h1 {
+            @include headerText64;
+            color: $cMainHover;
+        }
+
+        .secodary_text {
+            @include boldText30;
+            color: $cTextBlackMain;
+            padding-right: 10vw;
+
+            @media screen and (max-width: 1400px) {
+                font-size: 26px;
+            }
+
+            @media screen and (max-width: 900px) {
+                padding-right: 0;
+            }
+
+            @media screen and (max-width: 576px) {
+                font-weight: 400;
+            }
+
+            @media screen and (max-width: 450px) {
+                font-size: 24px;
+            }
+
+            @media screen and (max-width: 375px) {
+                font-size: 20px;
+            }
+        }
+    }
+
+    // Проекти
+    .portfolio {
+        position: relative;
+        width: 100vw;
+        height: 850px;
+
+        @media screen and (max-width: 1600px) {
+            height: 700px;
+        }
+
+        @media screen and (max-width: 1400px) {
+            height: 650px;
+        }
+
+        @media screen and (max-width: 1300px) {
+            height: 600px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            height: 950px;
+        }
+
+        @media screen and (max-width: 900px) {
+            height: 750px;
+        }
+
+        @media screen and (max-width: 850px) {
+            height: 710px;
+        }
+
+        @media screen and (max-width: 800px) {
+            height: 680px;
+        }
+
+        @media screen and (max-width: 700px) {
+            height: 630px;
+        }
+
+        @media screen and (max-width: 650px) {
+            height: 600px;
+        }
+
+        @media screen and (max-width: 600px) {
+            height: 550px;
+        }
+
+        @media screen and (max-width: 576px) {
+            height: 600px;
+        }
+
+        @media screen and (max-width: 480px) {
+            height: 550px;
+        }
+
+        .portfolio_row {
+            position: relative;
+
+            @media screen and (min-width: 1950px) {
+                width: 1250px;
+                display: flex;
+                margin: 0 auto;
+            }
+
+            @media screen and (max-width: 1949px) {
+                width: 100%;
+            }
+
+            @media screen and (max-width: 1400px) {
+                transform: scale(0.9) translateX(-3vw);
+            }
+
+            @media screen and (max-width: 1300px) {
+                transform: scale(0.8) translateX(-7vw);
+            }
+
+            @media screen and (max-width: 1250px) {
+                transform: scale(0.8) translateX(-8vw);
+            }
+
+            @media screen and (max-width: 1200px) {
+                transform: scale(1);
+            }
+
+            @media screen and (max-width: 900px) {
+                transform: scale(0.75) translate(-17vw, -140px);
+            }
+
+            @media screen and (max-width: 850px) {
+                transform: scale(0.7) translate(-21vw, -170px);
+            }
+
+            @media screen and (max-width: 800px) {
+                transform: scale(0.65) translate(-26vw, -200px);
+            }
+
+            @media screen and (max-width: 768px) {
+                transform: scale(0.63) translate(-30vw, -210px);
+            }
+
+            @media screen and (max-width: 700px) {
+                transform: scale(0.58) translate(-37vw, -270px);
+            }
+
+            @media screen and (max-width: 650px) {
+                transform: scale(0.54) translate(-44vw, -300px);
+            }
+
+            @media screen and (max-width: 600px) {
+                transform: scale(0.48) translate(-53vw, -350px);
+            }
+
+            @media screen and (max-width: 576px) {
+                transform: scale(0.48) translate(-70vw, -400px);
+            }
+
+            @media screen and (max-width: 520px) {
+                transform: scale(0.46) translate(-80vw, -420px);
+            }
+
+            @media screen and (max-width: 480px) {
+                transform: scale(0.42) translate(-95vw, -500px);
+            }
+
+            // Phone
+            .portfolio_phone {
+                @media screen and (min-width: 1950px) {
+                    left: -50px;
+                }
+
+                overscroll-behavior: contain;
+                position: absolute;
+                top: -100px;
+                width: 442px;
+                height: 750px;
+                transform: scale(0.8);
+                transform-style: preserve-3d;
+                transition: all 0.3s ease-in-out;
+                z-index: 1;
+                left: 15vw;
+
+                &:hover {
+                    transform: translate(40px, -10px) scale(0.9);
+                    z-index: 10000000;
+                }
+
+                @media screen and (max-width: 1810px) {
+                    left: 8vw;
+                    top: -110px;
+                }
+
+                @media screen and (max-width: 1770px) {
+                    transform: scale(0.75);
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        transform: translate(20px, -30px) scale(0.85);
+                    }
+                }
+
+                @media screen and (max-width: 1600px) {
+                    transform: scale(0.62);
+                    left: 6vw;
+                    top: -160px;
+
+                    &:hover {
+                        transform: translate(20px, -20px) scale(0.7);
+                    }
+                }
+
+                @media screen and (max-width: 1200px) {
+                    position: relative;
+                    top: 20px;
+                    left: 0vw;
+                    transform: scale(0.7);
+                    pointer-events: none;
+                }
+
+                @media screen and (max-width: 768px) {
+                    top: -20px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    top: 110px;
+                    left: 24vw;
+                    transform: scale(0.8);
+                }
+
+                .portfolio_phone_body {
+                    width: 442px;
+                    height: 850px;
+                    background-size: cover;
+                    background-image: url("../../images/projects/iphone12_black.webp");
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    bottom: 0px;
+                    right: 0px;
+                    z-index: 1;
+                    pointer-events: none;
+                }
+
+                @mixin phoneLoadingScreen {
+                    position: fixed;
+                    top: 42px;
+                    left: 40px;
+                    overflow: hidden;
+                    border-radius: 23px;
+                    box-shadow: 0 14px 100px 0 rgb(124, 124, 124);
+
+                    &::before {
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        bottom: 0px;
+                        right: 0px;
+                        content: '';
+                        background-size: cover;
+                        background-position: center;
+                        animation: phonePulse 2s infinite;
+                        z-index: -1;
+                    }
+
+                    @media screen and (max-width: 992px) {
+                        height: 783px;
+                        width: 360px;
+
+                        img {
+                            width: 100%;
+                            height: fit-content;
+                            user-select: none;
+                            pointer-events: none;
+                        }
+                    }
+                }
+
+                .portfolio_phone_screen_vikar {
+                    @include phoneLoadingScreen;
+                    background-color: white;
+
+                    &::before {
+                        background-image: url(../../images/projects/laptop_screen_vikar.webp);
+                    }
+                }
+
+                .portfolio_phone_screen_otaman {
+                    @include phoneLoadingScreen;
+                    background-color: $cOtaman;
+
+                    &::before {
+                        background-image: url(../../images/projects/laptop_screen_otaman.webp);
+                    }
+                }
+
+                .portfolio_phone_screen_ukritarm {
+                    @include phoneLoadingScreen;
+                    background-color: $cUkritarmBlue;
+
+                    &::before {
+                        background-image: url(../../images/projects/laptop_screen_ukritarm.webp);
+                    }
+                }
+
+                .portfolio_phone_screen_off_load {
+                    &::before {
+                        animation: none;
+                        display: none;
+                    }
+                }
+
+                // Phone header
+                @mixin phone_screen_header {
+                    width: 100%;
+                    height: 19px;
+                    z-index: 1000000;
+
+                    &::before {
+                        z-index: 1000000;
+                        width: 100%;
+                        height: 21px;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        right: 0px;
+                        content: "";
+                    }
+                }
+
+                .portfolio_phone_screen_header {
+                    @include phone_screen_header;
+
+                    &::before {
+                        background-color: #8ec340;
+                    }
+                }
+
+                .portfolio_phone_screen_header_otaman {
+                    @include phone_screen_header;
+
+                    &::before {
+                        background-color: #ffcd00;
+                    }
+                }
+
+                .portfolio_phone_screen_header_ukritarm {
+                    @include phone_screen_header;
+
+                    &::before {
+                        background-color: #0a2038;
+                    }
+                }
+
+                .portfolio_phone_screen_img_mobile {
+                    display: none;
+
+                    @media screen and (max-width: 1200px) {
+                        display: inline-block;
+                    }
+                }
+
+                .portfolio_phone_screen_img_mobile,
+                .portfolio_phone_screen_iframe {
+                    width: 377px;
+                    height: 763px;
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    z-index: 999999;
+                    -moz-transform-origin: top left;
+                    -webkit-transform-origin: top left;
+                    -o-transform-origin: top left;
+                    -ms-transform-origin: top left;
+                    transform-origin: top left;
+                }
+
+                .portfolio_phone_screen_iframe {
+                    @media screen and (max-width: 1200px) {
+                        display: none;
+                    }
+                }
+            }
+
+            // Laptop
+            .portfolio_laptop {
+                @media screen and (min-width: 1950px) {
+                    left: 50px;
+                }
+
+                position: absolute;
+                top: 0px;
+                width: 1560px;
+                height: 100%;
+                transform: scale(0.6) rotateY(335deg);
+                transform-style: preserve-3d;
+                transition: all 0.3s ease-in-out;
+                left: 20vw;
+
+                &:hover {
+                    transform: rotateY(360deg) scale(0.75) translate(-80px, -80px);
+                    z-index: 10000000;
+                }
+
+                @media screen and (max-width: 1810px) {
+                    left: 14vw;
+                }
+
+                @media screen and (max-width: 1600px) {
+                    left: 8vw;
+                    transform: scale(0.55) rotateY(335deg);
+
+                    &:hover {
+                        transform: rotateY(360deg) scale(0.62) translate(-40px, -100px);
+                    }
+                }
+
+                @media screen and (max-width: 1200px) {
+                    transform: scale(0.5) rotateY(360deg);
+                    top: -130px;
+                    left: -10vw;
+                    pointer-events: none;
+                }
+
+                @media screen and (max-width: 576px) {
+                    transform: scale(0.55) rotateY(360deg);
+                    top: -100px;
+                    left: -19vw;
+                }
+
+                .portfolio_laptop_part {
+                    position: absolute;
+                    background: #7e7c89;
+                    width: 1560px;
+                    height: 900px;
+                    transform-origin: center center;
+                    backface-visibility: hidden;
+                    box-sizing: border-box;
+
+                    img {
+                        @media screen and (max-width: 1200px) {
+                            position: relative;
+                            z-index: 2;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .portfolio_laptop_part_keyboard {
+                    transform-origin: bottom;
+                    transform: rotateX(-120deg) rotateY(180deg);
+                    box-shadow: 0 14px 100px 0 rgb(124, 124, 124);
+
+                    .portfolio_laptop_part_keyboard_img {
+                        width: 100%;
+                        height: 100%;
+                        transform: rotate(180deg);
+                        background-size: cover;
+                        background-image: url("../../images/projects/laptop_keyboard.webp");
+                    }
+                }
+
+                @mixin laptop_screen {
+                    border: 10px solid rgb(47, 47, 47);
+                    overflow: hidden;
+                    background-color: white;
+                    box-shadow: 0 14px 100px 0 rgb(124, 124, 124);
+
+                    &::before {
+                        position: absolute;
+                        animation: pulse 2s infinite;
+                        top: 0px;
+                        left: 0px;
+                        bottom: 0px;
+                        right: 0px;
+                        width: inherit;
+                        height: inherit;
+                        content: '';
+                        background-size: cover;
+                        background-position: center;
+                        z-index: 0;
+                    }
+                }
+
+                .portfolio_laptop_part_screen_vikar {
+                    @include laptop_screen;
+
+                    &::before {
+                        background-image: url("../../images/projects/laptop_screen_vikar.webp");
+                    }
+                }
+
+                .portfolio_laptop_part_screen_otaman {
+                    @include laptop_screen;
+                    background-color: $cOtaman;
+
+                    &::before {
+                        background-image: url("../../images/projects/laptop_screen_otaman.webp");
+                    }
+                }
+
+                .portfolio_laptop_part_screen_ukritarm {
+                    @include laptop_screen;
+                    background-color: $cUkritarmBlue;
+
+                    &::before {
+                        background-image: url("../../images/projects/laptop_screen_ukritarm.webp");
+                    }
+                }
+
+                .portfolio_laptop_part_screen_off_load {
+                    &::before {
+                        background-image: none;
+                        animation: none;
+                    }
+                }
+
+                .portfolio_laptop_part_screen_iframe {
+                    width: 1544px;
+                    height: 880px;
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    transform-origin: top left;
+                    z-index: 2;
+                    position: relative;
+
+                    @media screen and (max-width: 1200px) {
+                        display: none;
+                    }
+                }
+
+                .portfolio_laptop_part_keyboard_back {
+                    transform-origin: bottom;
+                    transform: rotateX(-120deg);
+                }
+
+                @keyframes rotation {
+                    from {
+                        transform: rotateY(0deg);
+                    }
+
+                    to {
+                        transform: rotateY(360deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Ukritarm bg
+.portfolio_ukritarm {
+    &::before {
+        background-color: #04274f;
+        background: linear-gradient(45deg,
+                #00152c5f,
+                #ce7f006a,
+                #031e3c65,
+                #bb740370);
+    }
+}
+
+// Vikar bg
+.portfolio_vikar {
+    &::before {
+        background: linear-gradient(-45deg,
+                #8fc3403f,
+                #97d53963,
+                #ffcc0069,
+                #81a9446b,
+                #ffdc5157,
+                #81a9447b);
+    }
+}
+
+// Otaman bg
+.portfolio_otaman {
+    &::before {
+        background: linear-gradient(-45deg,
+                #5c67356b,
+                #7183325a,
+                #dcb4165f,
+                rgba(50, 149, 22, 0.652),
+                #9074045b,
+                #99b6337a);
+    }
+}
+
+.service_order {
+    z-index: 100000010;
+    position: relative;
+    filter: drop-shadow(0px -18px 70px #000) !important;
+}
+
+.footer {
+    .footer_container {
+        box-shadow: none;
+    }
+}
