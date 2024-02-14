@@ -1,0 +1,226 @@
+{
+    "common": {
+        "language": "Мова",
+        "exit": "Вихід",
+        "profile": "Профіль",
+        "settings": "Налаштування",
+        "structure": "Структура",
+        "employees": "Співробітники",
+        "search": "Пошук...",
+        "result": "Результат",
+        "totalIncome": "Загальна сума доходу"
+    },
+    "header": {
+        "buyTariff": "Купити тариф",
+        "tariffQuestion": "Hавіщо розширювати тариф?",
+        "purchase": "Купити",
+        "tariffFree": "Безкоштовний",
+        "implementation_install": "Замовити впровадження",
+        "support": "Підтримка",
+        "ordersAndInvoices": "Покупки та документи",
+        "invite": "Запросити",
+        "inviteEmployees": "Запросити співробітників",
+        "whyInvite": "Навіщо запрошувати?",
+        "employeess": "Співробітників"
+    },
+    "error": {
+        "requiredInput": "Обов'язкове поле*",
+        "passwordInvalid": "Пароль не відповідає формату",
+        "emailInvalid": "Не валідний e-mail",
+        "fileUploadExceedMax": "Розмір зображення перевищує максимально допустимий розмір (5 МБ).",
+        "fileUploadType": "Недійсний тип файлу. Будь ласка, завантажте зображення типу (JPEG, PNG, GIF)."
+    },
+    "auth": {
+        "continueWithGoogle": "Продовжити з Google"
+    },
+    "buttonDefault": {
+        "create": "Додати",
+        "change": "Змінити",
+        "cancel": "Відмінити",
+        "save": "Зберегти",
+        "saved": "Збережено",
+        "export": "Експорт"
+    },
+
+    "login": {
+        "header": "Увійти",
+        "welcome": "Ласкаво просимо до бухгалтерського обліку",
+        "loginLabel": "Логін",
+        "passwordLabel": "Пароль",
+        "forgotPasswordLink": "Забули пароль?",
+        "orText": "Або",
+        "button": "Увійти",
+        "invalidCredentials": "Невірний логін чи пароль!",
+        "notRegistered": "Ще не зареєструвались?",
+        "signupLink": "Реєстрація",
+        "demoImageAlt": "Демо зображення сайту"
+    },
+    "signup": {
+        "signupSuccessHeader": "Дякуємо за реєстрацію!",
+        "signupSuccessText": "Для завершення реєстрації, будь ласка, перевірте свою електронну пошту та підтвердіть свою адресу.",
+        "registration": "Реєстрація",
+        "welcomeText": "Ласкаво просимо до бухгалтерського обліку",
+        "continueWithGoogle": "Продовжити з Google",
+        "orText": "Або",
+        "firstName": "Ім'я",
+        "lastName": "Прізвище",
+        "middleName": "По-батькові",
+        "login": "Логін",
+        "email": "Email",
+        "password": "Пароль",
+        "confirmPassword": "Підтвердження пароля",
+        "passwordRequirements": "Мінімум 8 символів, має містити як мінімум одну цифру та букву в верхньому регістрі.",
+        "passwordMismatch": "Паролі не співпадають",
+        "registerButton": "Зареєструватися",
+        "alreadyHaveAccount": "Вже маєте аккаунт?",
+        "loginLink": "Увійти",
+        "demoImageAlt": "Демо зображення сайту",
+        "registrationError": "Помилка під час реєстрації.",
+        "duplicateUserError": "Користувач з таким логіном вже існує.",
+        "emptyFieldsError": "Не всі поля були заповнені.",
+        "noDataError": "Немає даних."
+    },
+    "modal": {
+        "continue": "Продовжити",
+        "saved": "Збережено"
+    },
+    "navLinks": {
+        "appName": "Жектрікс",
+        "accountant": "Бухгалтерія",
+        "subscription": "Мій тариф",
+        "company": "Компанія",
+        "crm": "Crm",
+        "integrations": "Інтеграція"
+    },
+    "roles": {
+        "global_admin": "Глобальний адміністратор",
+        "Admins": "Адміністратор",
+        "Manager": "Менеджер",
+        "super_admin": "Super адміністратор"
+    },
+
+    "accountant_terms": {
+        "edrpou": "Код ЄДРПОУ",
+        "individualTaxNumber": "ІПН",
+        "VatTaxes": "ПДВ"
+    },
+
+    "table": {
+        "datetimeRange": "Діапазон дат",
+        "datetimeRangeNotice": "*Потрібно обрати підприємство та діапазон дат, щоб побачити податки",
+        "filterNotice": "Фільтра нижче не впливають на розрахунки податків",
+        "separateValues": "Розділити значення",
+        "minDate": "Мін. дата",
+        "maxDate": "Макс. дата"
+    },
+
+    "tableWarehouseDocuments": {
+        "enterpriseName": "Підприємство",
+        "theDate": "Дата створення",
+        "fromPartner": "Відправник",
+        "toPartner": "Отримувач",
+        "vatTotal": "Сума НДС",
+        "exciseTaxTotal": "Сума Акциза",
+        "total": "Сума без НДС"
+    },
+
+    "tableFinancialDocuments": {
+        "number": "Id",
+        "enterpriseName": "Підприємство",
+        "theDate": "Дата створення",
+        "fromPartner": "Партнер",
+        "type": "Тип",
+        "moveCategory": "Касовий ордер",
+        "analisysChipherName": "Тип статті",
+        "total": "Сума",
+        "comment": "Коментар",
+        "theTypeCash": "Каса",
+        "theTypeBank": "Банк",
+        "moveCategoryIncome": "Прибутковий",
+        "moveCategoryExpenses": "Видатковий"
+    },
+
+    "tableEmployees": {
+        "avatar": "Фото",
+        "fio": "Ім'я та прізвище",
+        "username": "Username",
+        "email": "E-mail"
+    },
+
+    "table_fop_gr_en_es": {
+        "titleSecondGroup": "Показники господарської діяльності для платників єдиного податку другої групи",
+        "subTitleSecondGroup": "Щомісячні авансові внески",
+        "quarter": "Квартал",
+        "kvartal_1": "Квартал 1",
+        "kvartal_2": "Квартал 2",
+        "kvartal_3": "Квартал 3",
+        "kvartal_4": "Квартал 4",
+        "fullYear": "Весь рік",
+        "kvartalTotalIncome": "Сума доходу",
+        "unifiedTax": "Єдиний податок"
+    },
+
+    "table_fop_gr_en_esv_addition": {
+        "mainTitle": "Визначення сум нарахованого доходу застрахованих осіб та суми нарахованого єдиного внеску",
+        "enterprise": "Підприємство",
+        "year": "Рік",
+        "selectYear": "Виберіть рік",
+        "month": "Місяць",
+        "independentlyDetermined": "Нараховано заробітної плати",
+        "independentlyDeterminedPlaceholder": "Введіть нараховано ЗП",
+        "percentEN_Rate": "ЄП, відсоток",
+        "percentEN_RatePlaceholder": "Введіть ЄП відсоток",
+        "percentESV_Rate": "ЄСВ, відсоток",
+        "monthlyFinancialResult": "Сума доходу",
+        "amountOfTheSingle": "Єдиний внесок",
+        "amountOfAll": "Загальна сума єдиного внеску"
+    },
+
+    "taxResult": {
+        "title": "Податки",
+        "exciseToPay": "Акциз до сплати",
+        "totalIncome": "Фінансовий результат",
+        "totalTax": "Загальний податок",
+        "vatToPay": "ПДВ до сплати"
+    },
+    "profile": {
+        "titleEmployeePrefix": "Співробітник",
+        "contactTitle": "Контактна інформація",
+        "saveButton": "Зберегти зміни",
+        "savedSuccessfullyButton": "Збережено"
+    },
+
+    "subscriprions": {
+        "users": "користувачів",
+        "button": "Купити"
+    },
+
+    "month": {
+        "january": "Січень",
+        "february": "Лютий",
+        "march": "Березень",
+        "april": "Квітень",
+        "may": "Травень",
+        "june": "Червень",
+        "july": "Липень",
+        "august": "Серпень",
+        "september": "Вересень",
+        "october": "Жовтень",
+        "november": "Листопад",
+        "december": "Грудень"
+    },
+    "integrations": {
+        "port": "Порт",
+        "ip_address": "IP-адреса"
+    },
+    "panelEnterprises": {
+        "titleEdit": "Підприємство",
+        "titleOverview": "Основне",
+        "kveds": "Кведи",
+        "kvedPlaceholderNumber": "Номер",
+        "kvedPlaceholderName": "Назва",
+        "kvedPlaceholderMainName": "Назва основного кведу",
+        "addKvedButton": "+ Створити квед",
+        "kvedMainKvedTitle": "Зробити квед основним"
+    }
+}

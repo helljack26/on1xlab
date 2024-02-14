@@ -1,0 +1,246 @@
+@mixin input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 9px 15px;
+    padding-bottom: 10px;
+    border-radius: 70px;
+    gap: 26px;
+    background: #ffffff;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.8em;
+    border: 1px solid $cBorderGray;
+    line-height: 100%;
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &:focus {
+        border: 1px solid $cMainHover;
+    }
+
+    &:active {
+        border: 1px solid $cMainHover;
+    }
+
+    &:hover {
+        border: 1px solid $cMain;
+    }
+
+    &::placeholder {
+        color: $cTextBlackSecondary;
+    }
+
+    &:disabled {
+        background-color: rgb(240, 240, 240);
+
+        &:hover {
+            border: 1px solid $cBorderGray;
+        }
+    }
+
+    &:disabled + .form_label__active {
+        background-color: white;
+    }
+
+    @media screen and (max-width: 576px) {
+        font-size: 1em;
+        padding: 13px 15px;
+    }
+}
+
+@mixin input_disabled {
+    background-color: rgb(240, 240, 240) !important;
+    pointer-events: none !important;
+
+    &:hover {
+        border: 1px solid $cBorderGray !important;
+    }
+
+    .form_label {
+        background-color: rgb(240, 240, 240);
+    }
+
+    .form_label__active {
+        background-color: white;
+    }
+}
+
+@mixin textarea {
+    @include input;
+    border-radius: 16px;
+    width: 100% !important;
+    min-height: 103px !important;
+    display: flex;
+    resize: none;
+    background-color: white;
+    background-color: #0071db30;
+}
+
+@mixin button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 25px;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: $fMedium;
+    font-size: 1em !important;
+
+    &:hover {
+        box-shadow: 0 4px 17px 0 $cShadow;
+    }
+
+    i {
+        width: 20px;
+        height: 20px;
+        background-color: $cMain;
+        transition: all 0.3s ease-in-out;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        position: relative;
+        margin-top: -2px;
+    }
+}
+
+@mixin buttonViolet {
+    @include button;
+    color: whitesmoke;
+    background-color: $cMain;
+
+    &:hover {
+        color: white;
+        background-color: $cMainHover;
+    }
+
+    &:focus,
+    &:active {
+        color: white;
+    }
+}
+
+@mixin buttonBorder {
+    @include button;
+    border: 2px solid $cMain;
+
+    &:hover {
+        border: 2px solid $cMainHover;
+        color: $cMain;
+    }
+
+    &:focus,
+    &:active {
+        color: $cMain;
+    }
+}
+
+@mixin table_button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+    white-space: nowrap;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 3px;
+        font-size: 0.85em;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 48%;
+    }
+
+    &:hover {
+        color: white;
+        background-color: $cMainHover;
+        cursor: pointer;
+
+        i {
+            background-color: white;
+        }
+    }
+
+    i {
+        width: 20px;
+        height: 20px;
+        background-color: $cMain;
+        transition: all 0.3s ease-in-out;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        position: relative;
+        margin-top: -2px;
+    }
+}
+
+@mixin button_border_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+    font-family: $fMedium;
+    font-size: 1.4em !important;
+    border-bottom: 3px solid $cBorderGray;
+    user-select: none;
+    padding: 10px 30px;
+
+    &:hover {
+        cursor: pointer;
+        border-bottom: 3px solid $cMainHover;
+    }
+}
+
+@mixin link {
+    color: $cBgDarkSecondary;
+    border-bottom: 1px solid $cBorderGray;
+    font-size: 0.8em;
+    padding-bottom: 2px;
+
+    &:hover {
+        cursor: pointer;
+        color: $cMainHover;
+    }
+}
+
+@mixin focusVisible {
+    outline: $focusVisibleOutline !important;
+    border-radius: 3px;
+}
+
+@mixin customScrollBar {
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgb(224, 224, 224);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background: linear-gradient(180deg, $cMain, $cMainHover);
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

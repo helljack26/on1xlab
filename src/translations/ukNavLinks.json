@@ -1,0 +1,43 @@
+{
+    "login": "Логін",
+    "signup": "Реєстрація",
+    "forgot_password": "Забули пароль",
+
+    "accountant": {
+        "name": "Бухгалтерія",
+        "subPages": {
+            "reports": {
+                "name": "Звіти",
+                "children": {
+                    "fop_2_gr_en_esv": "ФОП 2гр Декл ЕН+ЕСВ",
+                    "fop_3_gr_en_esv": "ФОП 3гр Декл ЕН+ЕСВ"
+                }
+            }
+        },
+        "children": {
+            "enterprise_list": "Підприємства",
+            "financial_documents": "Фінансові документи",
+            "warehouse_documents": "Складські документи"
+        }
+    },
+    "subscription": {
+        "name": "Мій тариф",
+        "children": {
+            "license": "Мій тариф",
+            "subscription_list": "Тарифні плани"
+        }
+    },
+    "company": {
+        "name": "Компанія",
+        "children": {
+            "info": "Інфо",
+            "employees": "Співробітники"
+        }
+    },
+    "integrations": {
+        "name": "Інтеграції",
+        "children": {
+            "torgsoft": "Торгсофт"
+        }
+    }
+}

@@ -1,0 +1,223 @@
+{
+    "common": {
+        "language": "Language",
+        "exit": "Exit",
+        "profile": "Profile",
+        "settings": "Settings",
+        "structure": "Structure",
+        "employees": "Employees",
+        "search": "Search...",
+        "result": "Result",
+        "totalIncome": "Total income for year"
+    },
+    "header": {
+        "buyTariff": "Upgrade",
+        "tariffQuestion": "why upgrade?",
+        "purchase": "Buy",
+        "tariffFree": "Free",
+        "implementation_install": "Implementation request",
+        "support": "Support",
+        "ordersAndInvoices": "Orders and Invoices",
+        "invite": "Invite",
+        "inviteEmployees": "Invite Employees",
+        "whyInvite": "why Invite?",
+        "employeess": "Employees"
+    },
+    "error": {
+        "requiredInput": "Required*",
+        "passwordInvalid": "Password doesn't meet the format requirements.",
+        "emailInvalid": "Invalid email address.",
+        "fileUploadExceedMax": "Image size exceeds the maximum allowed size (5MB).",
+        "fileUploadType": "Invalid image type. Please upload a valid image (JPEG, PNG, GIF)."
+    },
+    "auth": {
+        "continueWithGoogle": "Continue with Google"
+    },
+    "buttonDefault": {
+        "create": "Create",
+        "change": "Edit",
+        "cancel": "Cancel",
+        "save": "Save",
+        "saved": "Saved",
+        "export": "Export"
+    },
+
+    "login": {
+        "header": "Login",
+        "welcome": "Welcome to accounting website",
+        "loginLabel": "Login",
+        "passwordLabel": "Password",
+        "forgotPasswordLink": "Forgot password?",
+        "orText": "Or",
+        "button": "Enter",
+        "invalidCredentials": "Incorrect login or password!",
+        "notRegistered": "Haven't registered yet?",
+        "signupLink": "Sign up",
+        "demoImageAlt": "Demo website Image"
+    },
+    "signup": {
+        "signupSuccessHeader": "Thank you for registration!",
+        "signupSuccessText": "To complete the registration, please check your email and confirm your address.",
+        "registration": "Registration",
+        "welcomeText": "Welcome to accounting website",
+        "continueWithGoogle": "Continue with Google",
+        "orText": "Or",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "middleName": "Middle Name",
+        "login": "Username",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "passwordRequirements": "Minimum 8 characters, Must contain at least one digit and one uppercase letter.",
+        "passwordMismatch": "Passwords don't match",
+        "registerButton": "Register",
+        "alreadyHaveAccount": "Already have an account?",
+        "loginLink": "Login",
+        "demoImageAlt": "Demo website Image",
+        "registrationError": "Error during registration.",
+        "duplicateUserError": "User with this username already exists.",
+        "emptyFieldsError": "Not all fields were filled out.",
+        "noDataError": "No data provided."
+    },
+    "modal": {
+        "continue": "Continue",
+        "saved": "Saved"
+    },
+    "navLinks": {
+        "appName": "Jacktrix",
+        "accountant": "Accountant",
+        "subscription": "Subscription",
+        "company": "Company",
+        "crm": "Crm",
+        "integrations": "Integration"
+    },
+    "roles": {
+        "global_admin": "Global administrator",
+        "Admins": "Administrator",
+        "Manager": "Manager",
+        "super_admin": "Super administrator"
+    },
+    "accountant_terms": {
+        "edrpou": "Code EDRPOU",
+        "individualTaxNumber": "ITN",
+        "VatTaxes": "VAT"
+    },
+
+    "table": {
+        "datetimeRange": "Date Range",
+        "datetimeRangeNotice": "*You need to select the enterprise and a date range to see the taxes.",
+        "filterNotice": "The filters below do not affect tax calculations.",
+        "separateValues": "Separate Values",
+        "minDate": "Min Date",
+        "maxDate": "Max Date"
+    },
+    "tableWarehouseDocuments": {
+        "enterpriseName": "Enterprise Name",
+        "theDate": "Creation Date",
+        "fromPartner": "Sender",
+        "toPartner": "Recipient",
+        "vatTotal": "VAT Amount",
+        "exciseTaxTotal": "Excise Tax Amount",
+        "total": "Total Amount excluding VAT"
+    },
+
+    "tableFinancialDocuments": {
+        "number": "Id",
+        "theDate": "Creation Date",
+        "enterpriseName": "Enterprise Name",
+        "fromPartner": "Partner",
+        "type": "Type",
+        "moveCategory": "Cash Order",
+        "analisysChipherName": "Article Type",
+        "total": "Amount",
+        "comment": "Comment",
+        "theTypeCash": "Cash register",
+        "theTypeBank": "Bank",
+        "moveCategoryIncome": "Income",
+        "moveCategoryExpenses": "Expenses"
+    },
+
+    "tableEmployees": {
+        "avatar": "Photo",
+        "fio": "First and last names",
+        "username": "Username",
+        "email": "E-mail"
+    },
+
+    "table_fop_gr_en_es": {
+        "titleSecondGroup": "Indicators of economic activity for second group simplified tax payers",
+        "subTitleSecondGroup": "Monthly advance payments",
+        "quarter": "Quarter",
+        "kvartal_1": "Quarter 1",
+        "kvartal_2": "Quarter 2",
+        "kvartal_3": "Quarter 3",
+        "kvartal_4": "Quarter 4",
+        "fullYear": "Full year",
+        "kvartalTotalIncome": "Total income",
+        "unifiedTax": "Unified tax %"
+    },
+
+    "table_fop_gr_en_esv_addition": {
+        "mainTitle": "Determination of the amounts of accrued income for insured individuals and the amounts of accrued unified contribution",
+        "enterprise": "Enterprise",
+        "year": "Year",
+        "selectYear": "Select Year",
+        "month": "Month",
+        "independentlyDetermined": "Accrued salary",
+        "independentlyDeterminedPlaceholder": "Enter the accrued salary",
+        "percentEN_Rate": "EN, percentage",
+        "percentEN_RatePlaceholder": "Enter EN percentage",
+        "percentESV_Rate": "ESV, percentage",
+        "monthlyFinancialResult": "Total income",
+        "amountOfTheSingle": "Amount of social security contribution",
+        "amountOfAll": "Sum of a single contribution"
+    },
+    "taxResult": {
+        "title": "Taxes",
+        "exciseToPay": "Excise to Pay",
+        "financialResult": "Financial Result",
+        "totalTax": "Total Tax",
+        "vatToPay": "VAT to Pay"
+    },
+    "profile": {
+        "titleEmployeePrefix": "Employee",
+        "contactTitle": "Profile information",
+        "saveButton": "Save Changes",
+        "savedSuccessfullyButton": "Saved successfully"
+    },
+
+    "subscriprions": {
+        "users": "users",
+        "button": "Buy"
+    },
+
+    "month": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+    },
+    "integrations": {
+        "port": "Port",
+        "ip_address": "IP Address"
+    },
+    "panelEnterprises": {
+        "titleEdit": "Enterprise",
+        "titleOverview": "Main",
+        "kveds": "Kveds",
+        "kvedPlaceholderNumber": "Number",
+        "kvedPlaceholderName": "Name",
+        "kvedPlaceholderMainName": "Main kved name",
+        "addKvedButton": "+ Create kved",
+        "kvedMainKvedTitle": "Make kved primary"
+    }
+}

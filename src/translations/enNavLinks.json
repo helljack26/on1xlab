@@ -1,0 +1,41 @@
+{
+    "login": "Login",
+    "signup": "Registration",
+    "forgot_password": "Forgot Password",
+    "accountant": {
+        "name": "Accountant",
+        "subPages": {
+            "reports": {
+                "name": "Report",
+                "children": {
+                    "fop_2_gr_en_esv": "FOP 2гр Decl EN+ESV",
+                    "fop_3_gr_en_esv": "FOP 3гр Decl EN+ESV"
+                }
+            }
+        },
+        "children": {
+            "enterprise_list": "Enterprises",
+            "financial_documents": "Financial documents"
+        }
+    },
+    "subscription": {
+        "name": "Subscription",
+        "children": {
+            "license": "Subscription",
+            "subscription_list": "Upgrade"
+        }
+    },
+    "company": {
+        "name": "Company",
+        "children": {
+            "info": "Info",
+            "employees": "Employee"
+        }
+    },
+    "integrations": {
+        "name": "Integration",
+        "children": {
+            "torgsoft": "Torgsoft"
+        }
+    }
+}
