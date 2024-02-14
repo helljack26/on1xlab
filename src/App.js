@@ -1,7 +1,7 @@
 import Routes from "./routes";
 
 // Style
-import "./assets/css/App.css";
+// import "./assets/css/App.css";
 import { StyleSheetManager } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
 

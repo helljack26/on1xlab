@@ -3,69 +3,34 @@ import React from "react";
 // Store
 import { observer } from "mobx-react-lite";
 // Components
-import LoadingSpinner from "../common/LoadingSpinner/LoadingSpinner";
-import SideMenu from "../common/SideMenu/SideMenu";
-import HeaderBar from "../common/HeaderBar/HeaderBar";
-import TabNavigation from "../common/TabNavigation/TabNavigation";
-import ProfilePanel from "../ProfilePanel/ProfilePanel";
-// import InviteEmployeePanel from "../InviteEmployeePanel/InviteEmployeePanel";
-import EnterprisePanel from "../EnterprisePanel/EnterprisePanel";
-import MobileBottomNavigation from "../common/MobileBottomNavigation/MobileBottomNavigation";
-// Helpers
-// import useImageDarkness from "../../hooks/useImageDarkness";
+import LoadingSpinner from "src/components/common/LoadingSpinner/LoadingSpinner";
+import MobileMenu from "src/components/common/MobileMenu/MobileMenu";
+import HeaderBar from "src/components/common/HeaderBar/HeaderBar";
+import Footer from "src/components/common/Footer/Footer";
 // Style
-import { baseStyle } from "../../assets/style/baseStyle";
+// import { baseStyle } from "../../assets/style/baseStyle";
+// const { Container, ContainerColumn, MainContent } = baseStyle;
 
 import IMAGES from "src/assets/images";
 import { useLocation } from "react-router-dom";
 import RouteName from "src/assets/routeName";
-const { Container, ContainerColumn, MainContent } = baseStyle;
 
-const ClientPageWrapper = observer(({ scroll = false, children }) => {
+const ClientPageWrapper = observer(({ scriptList = [], children }) => {
     const location = useLocation();
     const pagePath = location.pathname;
-    // const handleDarknessChange = (isDark) => {
-    //     console.log(isDark ? "Dark image" : "Light image");
-    // };
-
-    // useImageDarkness(
-    //     "http://localhost/uploads/users/avatar/c497399c9d8f131faa122bc8c1c9d514.jpg",
-    //     handleDarknessChange
-    // );
 
     return (
         <>
-            <LoadingSpinner />
-            <Container backgroundImage={IMAGES.MainBg} scroll={`${scroll}`}>
-                {/* Side menu */}
-                <SideMenu />
-                <ContainerColumn>
-                    {/* HeaderBar */}
+            <div id="body_wrapper" className="body_mobile">
+                <MobileMenu />
+                <div id="body_mobile_block">
+                    <LoadingSpinner />
                     <HeaderBar />
 
-                    {/* TabNavigation */}
-                    <TabNavigation />
-
-                    {/* Profile panel */}
-                    <ProfilePanel />
-
-                    {/* Invite employee panel */}
-                    {/* <InviteEmployeePanel /> */}
-
-                    {/* Enterprise panel */}
-                    {pagePath.includes(
-                        RouteName.accountantChildren.enterprise_list
-                    ) && <EnterprisePanel />}
-
-                    {/* TabNavigation */}
-                    <MobileBottomNavigation />
-
-                    {/* Main content */}
-                    <MainContent ishidden={scroll.toString()}>
-                        {children}
-                    </MainContent>
-                </ContainerColumn>
-            </Container>
+                    {children}
+                </div>
+            </div>
+            <Footer scriptList={scriptList} />
         </>
     );
 });

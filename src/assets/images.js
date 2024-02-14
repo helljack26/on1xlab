@@ -1,6 +1,5 @@
-import LoginIntro from "./img/login_intro.jpg";
-import MainBg from "./img/main_bg.jpg";
-import SignUpIntro from "./img/signup_intro.jpg";
+import Logo from "./images/icons/onixlab_logo.svg";
+import GeometryBackground from "./images/bg/geometry_background.webp";
 
 // Icon
 import UserIcon from "./img/icon/user_icon.svg";
@@ -28,9 +27,8 @@ import SettingsIcon from "./img/icon/settings_icon.svg";
 import SuccessGif from "./img/gif/success_check.gif";
 
 const IMAGES = {
-    LoginIntro: LoginIntro,
-    MainBg: MainBg,
-    SignUpIntro: SignUpIntro,
+    Logo: Logo,
+    GeometryBackground: GeometryBackground,
 
     // Icon
     UserIcon: UserIcon,

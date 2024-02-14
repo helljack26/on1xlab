@@ -24,12 +24,12 @@ class SidePanel {
     }
 
     openSidePanel = (panelName, zIndex) => {
-        // Check if the panel to be opened is the 'sideMenuPanel'
+        // Check if the panel to be opened is the 'MobileMenuPanel'
         if (panelName === SIDE_PANELS.SIDE_MENU) {
             // Open the specified panel without closing others
             this.panels[panelName] = { isOpen: true, zIndex };
         } else {
-            // Close all other panels except 'sideMenuPanel'
+            // Close all other panels except 'MobileMenuPanel'
             Object.keys(this.panels).forEach((name) => {
                 if (name !== SIDE_PANELS.SIDE_MENU) {
                     this.panels[name] = { ...this.panels[name], isOpen: false };

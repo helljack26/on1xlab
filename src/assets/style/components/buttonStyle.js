@@ -299,7 +299,6 @@ const ButtonTableHeaderRound = styled.button`
 `;
 
 const BurgerButton = styled.button`
-    display: none;
     position: relative;
     width: 35px;
     height: 24px;
@@ -310,6 +309,7 @@ const BurgerButton = styled.button`
     z-index: 97;
     top: 24px;
     left: 24px;
+    display: ${({ open }) => (open ? "none" : "inline-block")};
 
     &::before {
         content: "";

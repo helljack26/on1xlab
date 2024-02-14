@@ -32,9 +32,6 @@ const SlidePanel = observer(
         const panelRef = useRef(null);
         const overlayRef = useRef(null);
 
-        const isSideMenu = panelName === SIDE_PANELS.SIDE_MENU;
-        const isShowOverlayOnDesktop = !isSideMenu && !isMobile;
-
         // Animation function for sliding the menu
         const slideMenuAnimation = useCallback(
             (isOpen) => {
@@ -57,10 +54,7 @@ const SlidePanel = observer(
         // Animation function for fading in/out the overlay
         const fadeInOverlayAnimation = useCallback(
             (isOpen) => {
-                if (
-                    (overlayRef.current && isMobile) ||
-                    isShowOverlayOnDesktop
-                ) {
+                if (overlayRef.current) {
                     gsap.to(overlayRef.current, {
                         opacity: isOpen ? 1 : 0,
                         duration: 0.15,
@@ -88,7 +82,7 @@ const SlidePanel = observer(
                     slideMenuAnimation(isOpen);
                 }
             },
-            [isMobile, slideMenuAnimation, isShowOverlayOnDesktop]
+            [slideMenuAnimation]
         );
 
         // Effect to update isMobile state on window resize
@@ -97,7 +91,7 @@ const SlidePanel = observer(
                 const newIsMobile = window.innerWidth <= 1200;
 
                 // Check if there is a transition from desktop to mobile
-                if (!wasMobile.current && newIsMobile && isSideMenu) {
+                if (!wasMobile.current && newIsMobile) {
                     // Custom logic for the transition from desktop to mobile for SIDE_MENU
                     closeSidePanel(panelName);
                 }
@@ -114,7 +108,7 @@ const SlidePanel = observer(
             return () => {
                 window.removeEventListener("resize", handleResize);
             };
-        }, [closeSidePanel, openSidePanel, panelName, isSideMenu]);
+        }, [closeSidePanel, openSidePanel, panelName]);
 
         // Effect to handle isShowOnLoad logic based on the presence of a hash in the URL
         useEffect(() => {
@@ -142,17 +136,6 @@ const SlidePanel = observer(
             }
         }, [isOpen, fadeInOverlayAnimation]);
 
-        // Effect to reset side menu position when switching to desktop view
-        useEffect(() => {
-            const isSideMenuOnDesktop = !isMobile && !isOpen && isSideMenu;
-
-            if (isSideMenuOnDesktop) {
-                panelRef.current.style.transition = "none";
-                panelRef.current.style.transform = "translate(0px, 0px)";
-                openSidePanel(panelName);
-            }
-        }, [isMobile, isOpen, openSidePanel, panelName, isSideMenu]);
-
         const [hasClosedPanel, setHasClosedPanel] = useState(false);
 
         const handleCloseSidePanel = useCallback(() => {
@@ -165,13 +148,12 @@ const SlidePanel = observer(
             setHasClosedPanel(false);
         }, [location.pathname]);
 
-        // useEffect(() => {
-        //     // Close the panel only if isMobile is true and the panel hasn't been closed yet
-        //     if (isMobile && !hasClosedPanel) {
-        //         handleCloseSidePanel();
-        //         console.log("хуйгя");
-        //     }
-        // }, [isMobile, hasClosedPanel, handleCloseSidePanel]);
+        useEffect(() => {
+            // Close the panel only if isMobile is true and the panel hasn't been closed yet
+            if (isMobile && !hasClosedPanel) {
+                handleCloseSidePanel();
+            }
+        }, [isMobile, hasClosedPanel, handleCloseSidePanel]);
 
         return (
             <>
@@ -182,7 +164,7 @@ const SlidePanel = observer(
                     direction={direction}
                 >
                     {/* CloseButton styled component */}
-                    {!isSideMenu && isShowCloseButton && (
+                    {isShowCloseButton && (
                         <PanelCloseButton
                             direction={direction}
                             onClick={handleCloseSidePanel}
@@ -197,14 +179,13 @@ const SlidePanel = observer(
                 </PanelContainer>
 
                 {/* Overlay */}
-                {(isShowOverlayOnDesktop || isMobile) && (
-                    <BackgroundOverlay
-                        isOpen={isOpen}
-                        zIndex={zIndex}
-                        onClick={handleCloseSidePanel}
-                        ref={overlayRef}
-                    />
-                )}
+
+                <BackgroundOverlay
+                    isOpen={isOpen}
+                    zIndex={zIndex}
+                    onClick={handleCloseSidePanel}
+                    ref={overlayRef}
+                />
             </>
         );
     }

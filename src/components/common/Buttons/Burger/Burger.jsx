@@ -13,10 +13,12 @@ const Burger = observer(() => {
     const sidePanelStore = useSidePanelStore(); // Use the side panel store
     const [isButtonClickable, setIsButtonClickable] = useState(true);
 
+    const isOpen = sidePanelStore.panels[SIDE_PANELS.SIDE_MENU].isOpen;
+
     const handleToggleMenu = () => {
         if (isButtonClickable) {
-            // Toggle the sideMenu state in the global store
-            if (sidePanelStore.panels[SIDE_PANELS.SIDE_MENU].isOpen) {
+            // Toggle the MobileMenu state in the global store
+            if (isOpen) {
                 // If the side menu is currently open, close it
                 sidePanelStore.closeSidePanel(SIDE_PANELS.SIDE_MENU);
             } else {
@@ -39,15 +41,17 @@ const Burger = observer(() => {
     }, [isButtonClickable]);
 
     return (
-        <BurgerButton
-            open={sidePanelStore.panels[SIDE_PANELS.SIDE_MENU].isOpen}
-            onClick={handleToggleMenu}
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </BurgerButton>
+        !isOpen && (
+            <button
+                type="button"
+                className="header_hamburger"
+                onClick={handleToggleMenu}
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        )
     );
 });
 

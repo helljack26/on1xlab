@@ -4,10 +4,10 @@ import { observer } from "mobx-react-lite";
 
 import { Navigate } from "react-router-dom";
 // Variables
-import RouteName from "../../assets/routeName";
-import { UnprotectedRoute } from "../UnprotectedRoute";
+import RouteName from "../assets/routeName";
+import { UnprotectedRoute } from "./UnprotectedRoute";
 // Auth
-import Login from "../../pages/auth/Login/Login";
+import MainPage from "../pages/MainPage/MainPage";
 
 const Routes = observer(() => {
     const routesForNotAuthenticatedOnly = [
@@ -17,15 +17,11 @@ const Routes = observer(() => {
             children: [
                 {
                     path: "*",
-                    element: <Navigate to={RouteName.login} />, // Redirect all unmatched routes to /login
+                    element: <Navigate to={RouteName.main} />, // Redirect all unmatched routes to /login
                 },
                 {
-                    path: "", // Handle empty route (root path)
-                    element: <Navigate to={RouteName.login} />,
-                },
-                {
-                    path: RouteName.login,
-                    element: <Login />,
+                    path: RouteName.main,
+                    element: <MainPage />,
                 },
             ],
         },

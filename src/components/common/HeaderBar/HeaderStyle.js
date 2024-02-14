@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import C from "../../../assets/style/colors";
-import { HeaderPopupStyle } from "./HeaderPopup/HeaderPopupStyle";
 import { containersStyle } from "../../../assets/style/components/containersStyle";
 
 const Header = styled.div`
@@ -16,19 +15,6 @@ const Header = styled.div`
     column-gap: 20px;
     margin-bottom: 10px;
 
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 6px;
-        right: 0;
-        width: calc(100% - 6px);
-        height: 2px;
-        border-radius: 2px;
-        display: inline-block;
-        background-color: ${C.borderGray};
-        opacity: 0.3;
-    }
     @media screen and (max-width: 1200px) {
         padding-left: 60px;
     }
@@ -222,5 +208,4 @@ export const HeaderStyle = {
     ProfileIconImg: ProfileIconImg,
     ProfileText: ProfileText,
     ...containersStyle,
-    ...HeaderPopupStyle,
 };

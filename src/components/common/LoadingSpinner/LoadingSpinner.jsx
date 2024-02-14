@@ -1,66 +1,61 @@
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import styled, { keyframes } from "styled-components";
+import IMAGES from "src/assets/images";
 
 const spin = keyframes`
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
 `;
 
 const SpinnerContainer = styled.div`
+    position: fixed;
+    overflow-y: hidden;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 100000000000;
-    background-color: white;
+    flex-direction: row;
+    z-index: 1000;
+    opacity: 1;
+
+    img {
+        animation: ${spin} 2s infinite;
+
+        @media screen and (max-width: 576px) {
+            width: 300px;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 240px;
+        }
+    }
 `;
 
 const LoadingSpinner = () => {
-    const hasVisitedBefore = localStorage.getItem("hasVisitedBefore");
-    const [isLoading, setIsLoading] = useState(!hasVisitedBefore);
     const spinnerRef = useRef(null);
-    const isRouteChanging = useRef(false);
-
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        const handleBeforeUnload = () => {
-            if (!isRouteChanging.current) {
-                localStorage.removeItem("hasVisitedBefore");
-            }
-        };
-
-        const routeChangeStart = () => {
-            isRouteChanging.current = true;
-        };
-
-        const routeChangeComplete = () => {
-            isRouteChanging.current = false;
-        };
-
-        window.addEventListener("popstate", routeChangeStart);
-        window.addEventListener("pushState", routeChangeStart);
-        window.addEventListener("replaceState", routeChangeStart);
-        window.addEventListener("routeChangeComplete", routeChangeComplete);
-
-        window.addEventListener("beforeunload", handleBeforeUnload);
-
         // Ensure spinnerRef.current is truthy before applying the animation
         if (spinnerRef.current) {
             const fadeOutAnimation = gsap.to(spinnerRef.current, {
                 opacity: 0,
                 duration: 0.5,
-                delay: 0.4,
-                onStart: () => {
-                    if (!hasVisitedBefore) {
-                        localStorage.setItem("hasVisitedBefore", true);
-                    }
-                },
+                delay: 1,
                 onComplete: () => {
                     setIsLoading(false);
                 },
@@ -69,14 +64,18 @@ const LoadingSpinner = () => {
                 fadeOutAnimation.kill();
             };
         }
-
-        return () => {}; // No cleanup needed
-    }, [hasVisitedBefore]);
+    }, []);
 
     return (
         isLoading && (
             <SpinnerContainer ref={spinnerRef}>
                 {/* <Spinner /> */}
+                <img
+                    src={IMAGES.Logo}
+                    className="preloader_block_logo"
+                    height="150px"
+                    alt="logo"
+                />
             </SpinnerContainer>
         )
     );
