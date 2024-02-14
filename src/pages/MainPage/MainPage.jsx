@@ -36,7 +36,7 @@ const MainPage = observer(() => {
         <>
             <ClientPageWrapper scriptList={scriptList}>
                 {/* Main  */}
-                <main className="container">
+                <main id="container">
                     {/* Интро  */}
                     <section id="intro" className="section intro">
                         <div className="intro_block">
