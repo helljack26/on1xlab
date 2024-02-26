@@ -1,6 +1,8 @@
 let isOnce = true;
 let isMobileScroll = false;
-const scrollAnimation = () => {
+
+document.addEventListener("DOMContentLoaded", function () {
+
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
 
@@ -22,12 +24,10 @@ const scrollAnimation = () => {
     //Header animation
     const headerBlock = gsap.utils.toArray("header");
     gsap.fromTo(
-        headerBlock,
-        {
+        headerBlock, {
             autoAlpha: 0,
             y: -100,
-        },
-        {
+        }, {
             duration: 2,
             autoAlpha: 1,
             y: 0,
@@ -44,11 +44,11 @@ const scrollAnimation = () => {
 
     let sections = gsap.utils.toArray("section"),
         nav = gsap.utils.toArray(".bottom_nav_link"),
-        scrollToContact = !isProgectPage
-            ? gsap.utils.toArray("#scroll_to_Contact")
-            : undefined,
+        scrollToContact = !isProgectPage ?
+        gsap.utils.toArray("#scroll_to_Contact") :
+        undefined,
         getMaxWidth = () =>
-            sections.reduce((val, section) => val + section.offsetWidth, 0),
+        sections.reduce((val, section) => val + section.offsetWidth, 0),
         maxWidth = getMaxWidth(),
         scrollSpeed = 2,
         snapProgress,
@@ -102,7 +102,7 @@ const scrollAnimation = () => {
 
     ScrollTrigger.create({
         animation: tl,
-        trigger: ".container",
+        trigger: "#container",
         pin: true,
         scrub: 1,
         snap: {
@@ -111,7 +111,9 @@ const scrollAnimation = () => {
         },
         start: "top",
         end: () => "+=" + maxWidth / scrollSpeed,
-        onUpdate: ({ progress }) => {
+        onUpdate: ({
+            progress
+        }) => {
             setActiveLink(progress.toFixed(2));
             console.log("кайф");
         },
@@ -194,17 +196,14 @@ const scrollAnimation = () => {
             return a[0];
         };
     }
-    console.log("кайф");
 
     //Progress bar animation
     const progBar = gsap.utils.toArray(".bottom_nav");
     gsap.fromTo(
-        progBar,
-        {
+        progBar, {
             autoAlpha: 0,
             y: 100,
-        },
-        {
+        }, {
             duration: 2,
             autoAlpha: 1,
             y: 0,
@@ -212,21 +211,21 @@ const scrollAnimation = () => {
     );
 
     // Progress bar timeline
-    let progressBar = gsap.utils.toArray("body_wrapper");
-    gsap.to(progressBar, {
-        x: () =>
-            -(progressBar.scrollWidth - document.documentElement.clientWidth) +
-            "px",
-        ease: "none",
-        scrollTrigger: {
-            trigger: progressBar,
-            start: "top top",
-            end: () => "+=" + progressBar.offsetWidth,
-            scrub: true,
-            pin: true,
-            anticipatePin: 1,
-        },
-    });
+    let progressBar = gsap.utils.toArray("#progress");
+    // gsap.to(progressBar, {
+    //     x: () =>
+    //         -(progressBar.scrollWidth - document.documentElement.clientWidth) +
+    //         "px",
+    //     ease: "none",
+    //     scrollTrigger: {
+    //         trigger: progressBar,
+    //         start: "top top",
+    //         end: () => "+=" + progressBar.offsetWidth,
+    //         scrub: true,
+    //         pin: true,
+    //         anticipatePin: 1,
+    //     },
+    // });
     gsap.to("#progress", {
         value: 100,
         ease: "none",
@@ -250,5 +249,4 @@ const scrollAnimation = () => {
                 .querySelector(".contact_map")
                 .classList.remove("small_contact_map");
         });
-};
-scrollAnimation();
+});

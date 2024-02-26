@@ -55,7 +55,7 @@ const LoadingSpinner = () => {
             const fadeOutAnimation = gsap.to(spinnerRef.current, {
                 opacity: 0,
                 duration: 0.5,
-                delay: 1,
+                delay: 3,
                 onComplete: () => {
                     setIsLoading(false);
                 },

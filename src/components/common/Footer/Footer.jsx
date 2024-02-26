@@ -21,10 +21,9 @@ const Footer = observer(({ scriptList = [] }) => {
         { src: "assets/js/libs/gsap.min.js", isModule: false },
         { src: "assets/js/libs/anime.min.js", isModule: false },
         { src: "assets/js/libs/charming.min.js", isModule: false },
-        { src: "assets/js/scripts.js", isModule: true },
     ];
     const combinedScripts = [...mainScriptList, ...scriptList];
-    const delay = 20;
+    const delay = 5;
 
     // Use the custom hook to load scripts with a delay
     useDelayedScriptLoader(combinedScripts, delay);

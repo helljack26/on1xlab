@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+import {
+    useEffect
+} from "react";
 
 const useDelayedScriptLoader = (scriptList, delay) => {
     useEffect(() => {
@@ -30,7 +32,10 @@ const useDelayedScriptLoader = (scriptList, delay) => {
         const loadNextScript = (index) => {
             if (index < scriptList.length) {
                 setTimeout(() => {
-                    const { src, isModule } = scriptList[index];
+                    const {
+                        src,
+                        isModule
+                    } = scriptList[index];
                     loadScript(src, isModule, () => {
                         loadNextScript(index + 1);
                     });
@@ -41,7 +46,7 @@ const useDelayedScriptLoader = (scriptList, delay) => {
         // Start loading scripts
         setTimeout(() => {
             loadNextScript(0);
-        }, 100);
+        }, 400);
 
         return () => {
             // Cleanup code if needed
