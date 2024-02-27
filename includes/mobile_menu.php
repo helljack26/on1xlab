@@ -16,9 +16,6 @@
         <a href="/services" class="mobile_menu_nav_link_main">
             Послуги
         </a>
-        <a href="/wp-themes" class="mobile_menu_nav_link_main">
-            WordPress теми
-        </a>
         <a href="/projects" class="mobile_menu_nav_link_main">
             Проекти
         </a>

@@ -1,5 +1,3 @@
-<? if (trim($_SERVER['REQUEST_URI']) !== '/'): ?>
-
 <footer class="footer">
     <div class="footer_container">
         <div class="footer_container_block">
@@ -19,12 +17,12 @@
                 <h5>
                     Мапа сайту
                 </h5>
-                <a href="/">Головна</a>
-                <a href='services'>Послуги</a>
-                <a href='projects'>Проекти</a>
-                <a href="blog">Блог</a>
-                <a href="wp-themes">WordPress теми</a>
-                <a href="contacts">Контакти</a>
+                <a href="index.html">Головна</a>
+                <a href='services.html'>Послуги</a>
+                <a href='projects.html'>Проекти</a>
+                <a href="blog.html">Блог</a>
+
+                <a href="contacts.html">Контакти</a>
             </nav>
 
             <!-- Наші контакти -->
@@ -70,7 +68,6 @@
     </div>
 </footer>
 
-<? endif;?>
 
 <!-- Libs -->
 <script src="assets/js/libs/jquery.min.js"></script>

@@ -41,16 +41,6 @@
         </div>
     </div>
 
-    <? // Extra fields for services form 
-        $uri = $_SERVER['REQUEST_URI'];
-        if (strpos($uri, 'service') !== false || 
-            strpos($uri, 'services') !== false ||
-            strpos($uri, 'projects') !== false ||
-            strpos($uri, 'project') !== false) {
-            include('components/services/service_dropdown_for_form.php');
-        }
-    ?>
-
     <!-- Form textarea -->
     <div id="form_input_block1" class='contact_row_form_block_item'>
         <textarea id="userMessage" class="contact_row_form_block_item_textarea" rows="1"></textarea>
