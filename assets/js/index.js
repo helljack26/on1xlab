@@ -1,4 +1,8 @@
 const indexAnimation = () => {
+    if (location.pathname === '/') {
+        location.pathname = 'index.html'
+    }
+
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
 

@@ -1,8 +1,24 @@
-@import './main';
-@import './animation';
+@import './abstracts/main';
+@import './abstracts/animation';
 
 body {
-    @include customScrollBar;
+    background: #ffffff;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 16px;
+        border-radius: 0;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: linear-gradient(180deg, $cMain, $cMainHover);
+        border-radius: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background: linear-gradient(180deg, $cOrange, #ff7446);
+    }
 }
 
 #mouse-circle {
@@ -140,6 +156,9 @@ main {
 
         // Breadcrumbs
         .breadcrumbs_block {
+            display: flex;
+            flex-direction: row;
+            column-gap: 25px;
             margin-bottom: 50px;
 
             @media screen and (max-width: 1400px) {
@@ -150,15 +169,79 @@ main {
                 margin-bottom: 35px;
             }
 
+            @media screen and (max-width: 500px) {
+                overflow-x: auto;
+                width: 100vw;
+                padding-right: 40px;
+
+                &::-webkit-scrollbar {
+                    width: 0;
+                    height: 0;
+                }
+            }
+
+            @media screen and (max-width: 450px) {
+                column-gap: 25px;
+            }
+
+            a,
+            span {
+                @include plainText14;
+                font-size: 20px;
+                font-weight: 100;
+                white-space: nowrap;
+
+                @media screen and (max-width: 450px) {
+                    font-size: 18px;
+                }
+            }
+
             span {
                 color: $cOrange;
             }
 
             a {
                 color: white;
+                position: relative;
+                transition: all 0.3s ease-in-out;
 
                 &::after {
+                    mask-image: url(../../images/icons/arrow_icon.svg);
+                    width: 18px;
+                    height: 18px;
+                    mask-size: contain;
+                    mask-repeat: no-repeat;
+                    mask-position: center;
                     background-color: white;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    transition: all 0.3s ease-in-out;
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    right: -22px;
+                    transform: rotate(-90deg);
+                }
+
+                &:hover {
+                    color: $cOrange;
+                }
+
+                @media screen and (max-width: 992px) {
+                    &:hover {
+                        color: white;
+                    }
+
+                    &:active {
+                        color: $cOrange;
+                    }
+                }
+
+                @media screen and (max-width: 450px) {
+                    &::after {
+                        top: 3px;
+                    }
                 }
             }
         }
@@ -682,6 +765,7 @@ main {
     height: 100vh;
 }
 
+
 // services bg
 $containerSize: 2000px;
 $cubeMargin: 20px;
@@ -690,8 +774,12 @@ $col: 50;
 $animationHeightCube: 90px;
 $animationDuration: 15s;
 $delayAnimation: 1.4;
-$cubeSize: ($containerSize / ($totalCube / $col));
-$facesPosition: ($cubeSize / 2) - 0.2;
+
+// Update division operations using calc()
+
+$cubeSize: calc($containerSize / ($totalCube / $col));
+$facesPosition: calc(($cubeSize / 2) - 0.2px);
+
 
 .services_bg {
     width: $containerSize;
@@ -730,7 +818,7 @@ $facesPosition: ($cubeSize / 2) - 0.2;
     height: $cubeSize;
     transform-style: preserve-3d;
     position: absolute;
-    animation: rotation $animationDuration 1 ease-in-out;
+    animation: rotation $animationDuration infinite ease-in-out;
 
     div {
         width: 100%;
@@ -770,7 +858,7 @@ $facesPosition: ($cubeSize / 2) - 0.2;
     }
 }
 
-$columns: ($totalCube / $col) - 1;
+$columns: calc(($totalCube / $col) - 1);
 $cubeI: 0;
 $delayI: 0;
 
