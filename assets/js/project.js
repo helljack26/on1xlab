@@ -29,36 +29,14 @@ const projectAnimation = () => {
         isMobileScroll = false;
     }
 
-    if (projectHref.includes('ukritarm')) {
-        if (!isMobileScroll) {
-            // Ukritarm
-            insertLink('ukritarm_phone', 'https://ukritarm.com.ua', 100)
-            insertLink('ukritarm_laptop', 'https://ukritarm.com.ua', 200)
-        } else {
-            // Ukritarm
-            insertLink('ukritarm_phone_img', './images/projects/ukrItArm_mob.webp', 100)
-            insertLink('ukritarm_laptop_img', './images/projects/ukrItArm_desk.webp', 200)
-        }
-    } else if (projectHref.includes('vikar')) {
-        if (!isMobileScroll) {
-            // Vikar
-            insertLink('vikar_phone', 'https://vikar.center/', 100)
-            insertLink('vikar_laptop', 'https://vikar.center/', 200)
-        } else {
-            // Mobile img Vikar
-            insertLink('vikar_phone_img', './images/projects/vikar_mob.webp', 100)
-            insertLink('vikar_laptop_img', './images/projects/vikar_desk.webp', 200)
-        }
-    } else if (projectHref.includes('otaman')) {
-        if (!isMobileScroll) {
-            // Otaman
-            insertLink('otaman_phone', 'https://otaman.net/', 100)
-            insertLink('otaman_laptop', 'https://otaman.net/', 200)
-        } else {
-            // Mobile img Otaman
-            insertLink('otaman_phone_img', './images/projects/otaman_mob.webp', 100)
-            insertLink('otaman_laptop_img', './images/projects/otaman_desk.webp', 200)
-        }
+    if (!isMobileScroll) {
+        // Ukritarm
+        insertLink('ukritarm_phone', 'https://ukritarm.com.ua', 100)
+        insertLink('ukritarm_laptop', 'https://ukritarm.com.ua', 200)
+    } else {
+        // Ukritarm
+        insertLink('ukritarm_phone_img', './images/projects/ukrItArm_mob.webp', 100)
+        insertLink('ukritarm_laptop_img', './images/projects/ukrItArm_desk.webp', 200)
     }
 }
 
