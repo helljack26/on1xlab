@@ -8,9 +8,6 @@ window.history.scrollRestoration = "manual";
 
 // Add href to index page
 const currentLocation = location.pathname;
-if (currentLocation !== '/') {
-    document.querySelector('.header_logo_link').setAttribute('href', '/');
-}
 
 // Set active link for
 const setActiveLink = (href) => {

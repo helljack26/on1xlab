@@ -8,7 +8,6 @@ $result = mysqli_query($conn, $query);
 <html lang="uk">
 
 <head>
-    <? include('includes/meta_tags.php') ?>
 
     <meta name="description"
         content="Блог Onixlab - це джерело корисних статей про веб-розробку, дизайн та DevOps. Ознайомтесь з нашими статтями та підвищуйте свої знання в IT-сфері.">
@@ -23,17 +22,14 @@ $result = mysqli_query($conn, $query);
     <link rel="stylesheet" href="assets/css/blog.min.css">
     <title>Блог Onixlab: корисні статті про веб-розробку, дизайн та DevOps</title>
 </head>
-
 <!-- Mobile bg  -->
 <div class="mobile_menu_bg"></div>
-
 <div id="mobile_menu">
     <!-- Close -->
     <button type="button" class="mobile_menu_close">
         <span></span>
         <span></span>
     </button>
-
     <!-- Links -->
     <nav>
         <a href="/index.html" class="mobile_menu_nav_link_main">
@@ -50,7 +46,6 @@ $result = mysqli_query($conn, $query);
             Контакти
         </a>
     </nav>
-
     <!-- Stars bg-->
     <div id="stars-container">
         <div id="stars"></div>
@@ -60,18 +55,14 @@ $result = mysqli_query($conn, $query);
 </div>
 
 <body id="body_wrapper" class="body_mobile">
-
-
     <div id="body_mobile_block">
         <!-- Header -->
         <!-- Loader -->
         <div id="preloader">
             <img src="images/icons/onixlab_logo.svg" class="preloader_block_logo" height="150px" alt="logo" />
         </div>
-
         <!-- Mouse circle -->
         <div id="mouse-circle"></div>
-
         <!-- Header -->
         <header>
             <div class="header_row">
@@ -81,15 +72,13 @@ $result = mysqli_query($conn, $query);
                     <span></span>
                     <span></span>
                 </button>
-
                 <!-- Logo -->
                 <div class="header_logo">
-                    <a class="header_logo_link" href="#">
+                    <a class="header_logo_link" href="index.html">
                         <img src="images/icons/onixlab_logo.svg" alt="logo" />
                     </a>
                 </div>
             </div>
-
             <!-- Social links -->
             <div class="header_social">
                 <div class="tooltip" data-type="amras">
@@ -128,24 +117,19 @@ $result = mysqli_query($conn, $query);
                         </div>
                     </div>
                 </div>
-
                 <a class="header_social_link telegram_icon" href="https://t.me/onixlab_ua" target="_blank">
                 </a>
-
                 <a class="header_social_link viber_icon" href="viber://chat?number=0982142238">
                 </a>
-
                 <a class="header_social_link facebook_icon"
                     href="https://www.facebook.com/onixlabua?hc_ref=ARQUMF943BBe3oKI3zJmiK8Acixcn-kHJnZsX5g6bFrEgnuVgqg0F8ndzeA7rcVUc8I&fref=nf&__xts__[0]=68.ARDdeb28NUhpBHK1J0lYbx1cUvGr1m0oEw1AVCVY-tFTG4YcGvaB795AS-poslCJD_OZ2M4dFZxRiCUOEh7g6Z66Ntw64S1n_1qkD15oGAvKTTW3PO5c_roqnSx2f-ovTvPOno7FLR4MHj_krFnqL6KDtjx1O1MMXS3boj5i00GFqhd55TOjSKZlls_sZXYfqsW1Iz9oQ7dEc6S-s2kqcvZYSDclBBaJYatuP0SJC0KKxN1Pm5mBtntX_g7aMBgTqrDfeo9kIXWRjsqxwbnbJPJOZr_dnYd0rIjzlvfATb6S_eXD6LM"
                     target="_blank">
                 </a>
-
                 <a class="header_social_link instagram_icon" href="https://www.instagram.com/onixlab_ua"
                     target="_blank">
                 </a>
             </div>
         </header>
-
         <div class="news_header">
             <div class="breadcrumbs_block">
                 <a href='/'>Головна</a>
@@ -166,7 +150,6 @@ $result = mysqli_query($conn, $query);
                 $image = $row['image'];
                 $created_at = $row['created_at'];
             ?>
-
             <div class="news_wrapper_item">
                 <img class="news_wrapper_item_img" src="uploads/<?=$image?>"></img>
                 <h2><?=$title?></h2>
@@ -178,13 +161,9 @@ $result = mysqli_query($conn, $query);
             </div>
             <?php endwhile; ?>
         </div>
-
-
-
         <footer class="footer">
             <div class="footer_container">
                 <div class="footer_container_block">
-
                     <!-- Про нас -->
                     <div class="footer_container_block_aboutus">
                         <h5 class="footer_container_block_aboutus_header">
@@ -194,7 +173,6 @@ $result = mysqli_query($conn, $query);
                             Розробка веб-сайтів та додатків <nobr> під ключ / IT-послуги</nobr>
                         </p>
                     </div>
-
                     <!-- Навігація -->
                     <nav class="footer_container_nav">
                         <h5>
@@ -204,10 +182,8 @@ $result = mysqli_query($conn, $query);
                         <a href='services.html'>Послуги</a>
                         <a href='projects.html'>Проекти</a>
                         <a href="blog.html">Блог</a>
-
                         <a href="contacts.html">Контакти</a>
                     </nav>
-
                     <!-- Наші контакти -->
                     <div class="footer_container_block_contacts">
                         <h5 class="footer_container_block_contacts_header">
@@ -219,29 +195,27 @@ $result = mysqli_query($conn, $query);
                         <a href="tel:+380936572359">
                             +38 (093) 657-23-59
                         </a>
-
                         <!-- Соціальні мережі -->
                         <div class="footer_container_block_contacts_social">
                             <!-- Telegram -->
-                            <a href="" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="footer_container_block_contacts_social_telegram"></span>
                             </a>
                             <!-- Viber -->
-                            <a href="" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="footer_container_block_contacts_social_viber"></span>
                             </a>
                             <!-- Facebook -->
-                            <a href="" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="footer_container_block_contacts_social_fb"></span>
                             </a>
                             <!-- Instagram -->
-                            <a href="" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="footer_container_block_contacts_social_instagram"></span>
                             </a>
                         </div>
                     </div>
                 </div>
-
                 <!-- Copyright -->
                 <div class="footer_container_copyright">
                     <span>
@@ -250,18 +224,13 @@ $result = mysqli_query($conn, $query);
                 </div>
             </div>
         </footer>
-
-
         <!-- Libs -->
         <script src="assets/js/libs/jquery.min.js"></script>
         <script src="assets/js/libs/gsap.min.js"></script>
-
         <script src="assets/js/libs/anime.min.js"></script>
         <script src="assets/js/libs/charming.min.js"></script>
-
         <script src="assets/js/scripts.js" type="module"></script>
     </div>
-
 </body>
 
 </html>

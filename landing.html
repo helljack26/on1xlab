@@ -5,33 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
-    <link rel="preload" as="font">
-
     <link rel="icon" href="/images/logo/onixlab_logo_favicon.svg" type="image/x-icon">
-
     <meta name="author" content="Onixlab">
     <meta property="og:image" content="/images/logo/onixlab_logo.png" />
     <meta property="og:image" content="/images/services/og_image.jpg">
     <meta property="og:image:alt" content="Onixlab services List">
     <meta property="og:type" content="website">
-
     <link rel="stylesheet" href="/assets/css/service.min.css">
     <link rel="stylesheet" href="/assets/css/service_order.min.css">
-
     <title>Landing page - ONIXLAB: професійні ІТ-послуги</title>
 </head>
-
 <!-- Mobile bg  -->
 <div class="mobile_menu_bg"></div>
-
 <div id="mobile_menu">
     <!-- Close -->
     <button type="button" class="mobile_menu_close">
         <span></span>
         <span></span>
     </button>
-
     <!-- Links -->
     <nav>
         <a href="/index.html" class="mobile_menu_nav_link_main">
@@ -48,7 +39,6 @@
             Контакти
         </a>
     </nav>
-
     <!-- Stars bg-->
     <div id="stars-container">
         <div id="stars"></div>
@@ -58,18 +48,14 @@
 </div>
 
 <body id="body_wrapper" class="body_mobile">
-
-
     <div id="body_mobile_block">
         <!-- Header -->
         <!-- Loader -->
         <div id="preloader">
             <img src="/images/icons/onixlab_logo.svg" class="preloader_block_logo" height="150px" alt="logo" />
         </div>
-
         <!-- Mouse circle -->
         <div id="mouse-circle"></div>
-
         <!-- Header -->
         <header>
             <div class="header_row">
@@ -79,15 +65,13 @@
                     <span></span>
                     <span></span>
                 </button>
-
                 <!-- Logo -->
                 <div class="header_logo">
-                    <a class="header_logo_link" href="#">
+                    <a class="header_logo_link" href="index.html">
                         <img src="/images/icons/onixlab_logo.svg" alt="logo" />
                     </a>
                 </div>
             </div>
-
             <!-- Social links -->
             <div class="header_social">
                 <div class="tooltip" data-type="amras">
@@ -126,24 +110,19 @@
                         </div>
                     </div>
                 </div>
-
                 <a class="header_social_link telegram_icon" href="https://t.me/onixlab_ua" target="_blank">
                 </a>
-
                 <a class="header_social_link viber_icon" href="viber://chat?number=0982142238">
                 </a>
-
                 <a class="header_social_link facebook_icon"
                     href="https://www.facebook.com/onixlabua?hc_ref=ARQUMF943BBe3oKI3zJmiK8Acixcn-kHJnZsX5g6bFrEgnuVgqg0F8ndzeA7rcVUc8I&fref=nf&__xts__[0]=68.ARDdeb28NUhpBHK1J0lYbx1cUvGr1m0oEw1AVCVY-tFTG4YcGvaB795AS-poslCJD_OZ2M4dFZxRiCUOEh7g6Z66Ntw64S1n_1qkD15oGAvKTTW3PO5c_roqnSx2f-ovTvPOno7FLR4MHj_krFnqL6KDtjx1O1MMXS3boj5i00GFqhd55TOjSKZlls_sZXYfqsW1Iz9oQ7dEc6S-s2kqcvZYSDclBBaJYatuP0SJC0KKxN1Pm5mBtntX_g7aMBgTqrDfeo9kIXWRjsqxwbnbJPJOZr_dnYd0rIjzlvfATb6S_eXD6LM"
                     target="_blank">
                 </a>
-
                 <a class="header_social_link instagram_icon" href="https://www.instagram.com/onixlab_ua"
                     target="_blank">
                 </a>
             </div>
         </header>
-
         <!-- Services content -->
         <main class="container">
             <div class="services_bg">
@@ -470,7 +449,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="container_header">
                 <div class="breadcrumbs_block">
                     <a href='index.html'>
@@ -483,12 +461,10 @@
                         Landing page
                     </span>
                 </div>
-
                 <!-- Main title -->
                 <h1>
                     Landing page
                 </h1>
-
                 <p class="secodary_text">
                     Landing page - це односторінкова посадкова сторінка, завдання якої спонукати користувача зробити
                     цільову
@@ -496,88 +472,110 @@
                     даних
                     потенційного клієнта.
                 </p>
-
                 <!-- Services switcher -->
                 <div class="services_switchers">
                     <h2>
                         Вартість послуги
                     </h2>
                     <div class="services_switchers_row">
-                        <? foreach ($get_services as $services_item => $services_value):
-                            $service_switch_name = $services_value['service_name'];
-                            $switch_pathname = $services_value['pathname'];
-                            $is_active_link = $get_pathname == $switch_pathname ? "services_switchers_active" : '';
-                        ?>
-                        <a href='/service/<?=$switch_pathname?>' class="<?=$is_active_link?>" target="_blank">
-                            <?=$service_switch_name?>
+                        <a href='/landing.html' class="">
+                            Сайт візитка
                         </a>
-                        <? endforeach; ?>
+                        <a href='/landing.html' class="services_switchers_active">
+                            Landing page
+                        </a>
+                        <a href='/landing.html' class="">
+                            Сайт візитка
+                        </a>
+                        <a href='/landing.html' class="">
+                            Сайт візитка
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="services_wrapper">
-
                 <div class="services_block">
-                    <? $query_services_type = "SELECT * FROM services WHERE pathname='$get_pathname' ORDER BY position_on_row ASC";
-                    $get_services_type = mysqli_query($conn, $query_services_type);
-
-                    while ($row_services_type = mysqli_fetch_assoc($get_services_type)):
-                        $services_type = $row_services_type['services_type'];
-                        $price = $row_services_type['price'];
-                        $params = json_decode($row_services_type['params'], true);
-
-                        $is_services_block_item_top = intval($row_services_type['position_on_row']) == 2 ?
-                        'services_block_item_top': '';
-                    ?>
-
-                    <div class="services_block_item <?=$is_services_block_item_top?>">
+                    <div class="services_block_item">
                         <div class="services_block_item_header">
-                            <h3><?=$services_type?></h3>
+                            <h3>Базовий</h3>
                             <span class="services_block_item_header_price">
-                                <?=addSpaceForThousands($price)?><i>₴</i>
+                                <i>8000₴</i>
                             </span>
                         </div>
-
                         <ul class="services_block_item_list">
-                            <? // Order params by order position
-                                $order = array();
-                                foreach ($params as $key => $row) { $order[$key] = $row['order'];}
-                                array_multisort($order, SORT_ASC, $params);
-                            
-                                foreach ($params as $param_name => $param_value): ?>
-                            <li class="<?=$param_value['enabled'] == true 
-                                        ?
-                                        'services_block_item_list_enabled': 
-                                        'services_block_item_disabled';
-                                        ?>">
-                                <?=$param_name?>
-                            </li>
-                            <?endforeach;?>
+                            <li class="services_block_item_list_enabled">Унікальний дизайн</li>
+                            <li class="services_block_item_list_enabled">Адаптивність</li>
+                            <li class="services_block_item_list_enabled">Хостінг</li>
+                            <li class="services_block_item_list_enabled">SEO оптимізація</li>
+                            <li class="services_block_item_disabled">5-8 блоків</li>
+                            <li class="services_block_item_disabled">Кросбраузерність</li>
+                            <li class="services_block_item_disabled">SSL-сертифікат</li>
+                            <li class="services_block_item_disabled">Багатомовність</li>
+                            <li class="services_block_item_disabled">Онлайн оплата</li>
                         </ul>
-
                         <button type="button" class="services_block_item_order">
                             Замовити
                         </button>
                     </div>
-
-                    <?endwhile;?>
+                    <div class="services_block_item services_block_item_top">
+                        <div class="services_block_item_header">
+                            <h3>Максимум</h3>
+                            <span class="services_block_item_header_price">
+                                <i>25000₴</i>
+                            </span>
+                        </div>
+                        <ul class="services_block_item_list">
+                            <li class="services_block_item_list_enabled">Унікальний дизайн</li>
+                            <li class="services_block_item_disabled">5-8 блоків</li>
+                            <li class="services_block_item_disabled">Адаптивність</li>
+                            <li class="services_block_item_disabled">Кросбраузерність</li>
+                            <li class="services_block_item_disabled">Домен</li>
+                            <li class="services_block_item_disabled">Хостінг</li>
+                            <li class="services_block_item_disabled">SSL-сертифікат</li>
+                            <li class="services_block_item_disabled">SEO оптимізація</li>
+                            <li class="services_block_item_disabled">Багатомовність</li>
+                            <li class="services_block_item_disabled">Онлайн оплата</li>
+                        </ul>
+                        <button type="button" class="services_block_item_order">
+                            Замовити
+                        </button>
+                    </div>
+                    <div class="services_block_item">
+                        <div class="services_block_item_header">
+                            <h3>Стандарт</h3>
+                            <span class="services_block_item_header_price">
+                                <i>12000₴</i>
+                            </span>
+                        </div>
+                        <ul class="services_block_item_list">
+                            <li class="services_block_item_list_enabled">Унікальний дизайн</li>
+                            <li class="services_block_item_list_enabled">Адаптивність</li>
+                            <li class="services_block_item_list_enabled">Хостінг</li>
+                            <li class="services_block_item_list_enabled">SEO оптимізація</li>
+                            <li class="services_block_item_disabled">5-8 блоків</li>
+                            <li class="services_block_item_disabled">Кросбраузерність</li>
+                            <li class="services_block_item_disabled">SSL-сертифікат</li>
+                            <li class="services_block_item_disabled">Багатомовність</li>
+                            <li class="services_block_item_disabled">Онлайн оплата</li>
+                            <li class="services_block_item_disabled">Домен</li>
+                        </ul>
+                        <button type="button" class="services_block_item_order">
+                            Замовити
+                        </button>
+                    </div>
                 </div>
             </div>
-
         </main>
-
         <!-- Order services -->
         <div class="service_order">
             <div class="services_order_row">
                 <div class="service_order_bg">
                 </div>
-
                 <!-- Form -->
                 <div class="service_order_content">
                     <span class="service_order_content_header">
                         Замовити розробку сайту
                     </span>
-
                     <!-- Success submit -->
                     <div id="contact_row_form_success" class="contact_row_form_success">
                         <div class="contact_row_form_success_block">
@@ -589,20 +587,15 @@
                             </span>
                         </div>
                     </div>
-
                     <!-- Subscribe form -->
                     <form id="contact_form" class='contact_row_form_block'>
-
                         <!-- Name -->
                         <div class="contact_row_form_block_row">
-
                             <div id="form_input_block" class='contact_row_form_block_item'>
                                 <input id="userName" class="contact_row_form_block_item_input" type="text">
-
                                 <label id="name_label" class='contact_row_form_block_item_label'>
                                     Ваше Iм'я
                                 </label>
-
                                 <span id="input_errorMessage1" class='contact_row_form_block_item_errorMessage'>
                                     Мiнiмум 2 символи
                                 </span>
@@ -611,21 +604,17 @@
                             <div id="form_input_block" class='contact_row_form_block_item'>
                                 <input id="userPhone" class="contact_row_form_block_item_input" type="tel"
                                     maxlength="13">
-
                                 <label id="phone_label" class='contact_row_form_block_item_label'>
                                     Номер телефону
                                 </label>
-
                                 <span id="input_errorMessage2" class='contact_row_form_block_item_errorMessage'>
                                     Невiрний формат
                                 </span>
                             </div>
                         </div>
-
                         <!-- Form textarea -->
                         <div id="form_input_block1" class='contact_row_form_block_item'>
                             <textarea id="userMessage" class="contact_row_form_block_item_textarea" rows="1"></textarea>
-
                             <label id="review_label" class='contact_row_form_block_item_label'>
                                 Ваше повідомлення
                             </label>
@@ -645,13 +634,9 @@
             </div>
         </div>
     </div>
-
-
-
     <footer class="footer">
         <div class="footer_container">
             <div class="footer_container_block">
-
                 <!-- Про нас -->
                 <div class="footer_container_block_aboutus">
                     <h5 class="footer_container_block_aboutus_header">
@@ -661,7 +646,6 @@
                         Розробка веб-сайтів та додатків <nobr> під ключ / IT-послуги</nobr>
                     </p>
                 </div>
-
                 <!-- Навігація -->
                 <nav class="footer_container_nav">
                     <h5>
@@ -671,10 +655,8 @@
                     <a href='services.html'>Послуги</a>
                     <a href='projects.html'>Проекти</a>
                     <a href="blog.html">Блог</a>
-
                     <a href="contacts.html">Контакти</a>
                 </nav>
-
                 <!-- Наші контакти -->
                 <div class="footer_container_block_contacts">
                     <h5 class="footer_container_block_contacts_header">
@@ -686,29 +668,27 @@
                     <a href="tel:+380936572359">
                         +38 (093) 657-23-59
                     </a>
-
                     <!-- Соціальні мережі -->
                     <div class="footer_container_block_contacts_social">
                         <!-- Telegram -->
-                        <a href="" target="_blank">
+                        <a href="#" target="_blank">
                             <span class="footer_container_block_contacts_social_telegram"></span>
                         </a>
                         <!-- Viber -->
-                        <a href="" target="_blank">
+                        <a href="#" target="_blank">
                             <span class="footer_container_block_contacts_social_viber"></span>
                         </a>
                         <!-- Facebook -->
-                        <a href="" target="_blank">
+                        <a href="#" target="_blank">
                             <span class="footer_container_block_contacts_social_fb"></span>
                         </a>
                         <!-- Instagram -->
-                        <a href="" target="_blank">
+                        <a href="#" target="_blank">
                             <span class="footer_container_block_contacts_social_instagram"></span>
                         </a>
                     </div>
                 </div>
             </div>
-
             <!-- Copyright -->
             <div class="footer_container_copyright">
                 <span>
@@ -717,20 +697,16 @@
             </div>
         </div>
     </footer>
-
-
     <!-- Libs -->
     <script src="/assets/js/libs/jquery.min.js"></script>
     <script src="/assets/js/libs/gsap.min.js"></script>
-
     <script src="/assets/js/libs/anime.min.js"></script>
     <script src="/assets/js/libs/charming.min.js"></script>
-
     <script src="/assets/js/scripts.js" type="module"></script>
     <script src="/assets/js/formValidation.js"></script>
     <script src="/assets/js/service.js"></script>
     <script src="/assets/js/service_order.js"></script>
-
+    <!--  -->
 </body>
 
 </html>
