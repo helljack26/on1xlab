@@ -107,8 +107,8 @@ select {
     font-display: swap;
 }
 
-@import "./variables";
-@import "./mixin";
+@import "./abstracts/variables";
+@import "./abstracts/mixin";
 @import "./animation";
 
 body {

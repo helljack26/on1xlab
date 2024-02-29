@@ -1,5 +1,5 @@
-@import './main';
-@import './animation';
+@import './abstracts/main';
+@import './abstracts/animation';
 
 body {
     overscroll-behavior: contain;
